@@ -1,0 +1,530 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="15.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{9D9E81BA-46CE-4D79-9CFA-C7B7882B2BB0}</ProjectGuid>
+    <OutputType>WinExe</OutputType>
+    <RootNamespace>DeviceManager</RootNamespace>
+    <AssemblyName>DeviceManager</AssemblyName>
+    <TargetFrameworkVersion>v4.7.2</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <AutoGenerateBindingRedirects>true</AutoGenerateBindingRedirects>
+    <Deterministic>true</Deterministic>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="System" />
+    <Reference Include="System.Configuration" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.IO.FileSystem.AccessControl, Version=5.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
+      <HintPath>packages\System.IO.FileSystem.AccessControl.5.0.0\lib\net461\System.IO.FileSystem.AccessControl.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Security.AccessControl, Version=5.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
+      <HintPath>packages\System.Security.AccessControl.5.0.0\lib\net461\System.Security.AccessControl.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Security.Principal.Windows, Version=5.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
+      <HintPath>packages\System.Security.Principal.Windows.5.0.0\lib\net461\System.Security.Principal.Windows.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Deployment" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Net.Http" />
+    <Reference Include="System.Windows.Forms" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="AddressFrm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="AddressFrm.Designer.cs">
+      <DependentUpon>AddressFrm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="ApFrm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ApFrm.Designer.cs">
+      <DependentUpon>ApFrm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="BackupRestoreFrm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="BackupRestoreFrm.Designer.cs">
+      <DependentUpon>BackupRestoreFrm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="BulkMaintenanceFrm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="BulkMaintenanceFrm.Designer.cs">
+      <DependentUpon>BulkMaintenanceFrm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="CompanyDetail.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="CompanyDetail.Designer.cs">
+      <DependentUpon>CompanyDetail.cs</DependentUpon>
+    </Compile>
+    <Compile Include="CompanyFrm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="CompanyFrm.Designer.cs">
+      <DependentUpon>CompanyFrm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="ConnectionSetupFrm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ConnectionSetupFrm.Designer.cs">
+      <DependentUpon>ConnectionSetupFrm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="DeviceDetailFrm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="DeviceDetailFrm.Designer.cs">
+      <DependentUpon>DeviceDetailFrm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="DeviceFrm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="DeviceFrm.Designer.cs">
+      <DependentUpon>DeviceFrm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="DevicePartDetailFrm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="DevicePartDetailFrm.Designer.cs">
+      <DependentUpon>DevicePartDetailFrm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="DevicePartRelatedFrm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="DevicePartRelatedFrm.Designer.cs">
+      <DependentUpon>DevicePartRelatedFrm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="DevicePartFrm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="DevicePartFrm.Designer.cs">
+      <DependentUpon>DevicePartFrm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="DeviceSelectFrm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="DeviceSelectFrm.Designer.cs">
+      <DependentUpon>DeviceSelectFrm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="DeviceStatusFrm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="DeviceStatusFrm.Designer.cs">
+      <DependentUpon>DeviceStatusFrm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="LocationSetupFrm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="LocationSetupFrm.Designer.cs">
+      <DependentUpon>LocationSetupFrm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="MainFrm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="MainFrm.Designer.cs">
+      <DependentUpon>MainFrm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="MaintenanceFrm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="MaintenanceFrm.Designer.cs">
+      <DependentUpon>MaintenanceFrm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="MaintenanceDetailFrm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="MaintenanceDetailFrm.Designer.cs">
+      <DependentUpon>MaintenanceDetailFrm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="PhoneBookDetailFrm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="PhoneBookDetailFrm.Designer.cs">
+      <DependentUpon>PhoneBookDetailFrm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="PhoneBookFrm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="PhoneBookFrm.Designer.cs">
+      <DependentUpon>PhoneBookFrm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Program.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Properties\Resources.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Resources.resx</DependentUpon>
+    </Compile>
+    <Compile Include="ShowLocationTreeView.cs" />
+    <Compile Include="ShowTreeView.cs" />
+    <Compile Include="SparePartBalanceFrm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="SparePartBalanceFrm.Designer.cs">
+      <DependentUpon>SparePartBalanceFrm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="SparePartChangedDetailFrm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="SparePartChangedDetailFrm.Designer.cs">
+      <DependentUpon>SparePartChangedDetailFrm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="SparePartChangedFrm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="SparePartChangedFrm.Designer.cs">
+      <DependentUpon>SparePartChangedFrm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="SparePartDetailFrm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="SparePartDetailFrm.Designer.cs">
+      <DependentUpon>SparePartDetailFrm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="SparePartFrm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="SparePartFrm.Designer.cs">
+      <DependentUpon>SparePartFrm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="SparePartNeededDetailFrm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="SparePartNeededDetailFrm.Designer.cs">
+      <DependentUpon>SparePartNeededDetailFrm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="SparePartNeededFrm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="SparePartNeededFrm.Designer.cs">
+      <DependentUpon>SparePartNeededFrm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="SparePartNeededStatusFrm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="SparePartNeededStatusFrm.Designer.cs">
+      <DependentUpon>SparePartNeededStatusFrm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="SparePartSelectFrm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="SparePartSelectFrm.Designer.cs">
+      <DependentUpon>SparePartSelectFrm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="SubDeviceFrm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="SubDeviceFrm.Designer.cs">
+      <DependentUpon>SubDeviceFrm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="ToolDetailFrm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ToolDetailFrm.Designer.cs">
+      <DependentUpon>ToolDetailFrm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="ToolFrm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ToolFrm.Designer.cs">
+      <DependentUpon>ToolFrm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="ToolLendDetailFrm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ToolLendDetailFrm.Designer.cs">
+      <DependentUpon>ToolLendDetailFrm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="ToolLendRecordFrm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ToolLendRecordFrm.Designer.cs">
+      <DependentUpon>ToolLendRecordFrm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="ToolQtyChangeFrm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ToolQtyChangeFrm.Designer.cs">
+      <DependentUpon>ToolQtyChangeFrm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="ToolTypeFrm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ToolTypeFrm.Designer.cs">
+      <DependentUpon>ToolTypeFrm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UnitsSetupFrm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="UnitsSetupFrm.Designer.cs">
+      <DependentUpon>UnitsSetupFrm.cs</DependentUpon>
+    </Compile>
+    <EmbeddedResource Include="AddressFrm.resx">
+      <DependentUpon>AddressFrm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ApFrm.resx">
+      <DependentUpon>ApFrm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="BackupRestoreFrm.resx">
+      <DependentUpon>BackupRestoreFrm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="BulkMaintenanceFrm.resx">
+      <DependentUpon>BulkMaintenanceFrm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="CompanyDetail.resx">
+      <DependentUpon>CompanyDetail.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="CompanyFrm.resx">
+      <DependentUpon>CompanyFrm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ConnectionSetupFrm.resx">
+      <DependentUpon>ConnectionSetupFrm.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="DeviceDetailFrm.resx">
+      <DependentUpon>DeviceDetailFrm.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="DeviceFrm.resx">
+      <DependentUpon>DeviceFrm.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="DevicePartDetailFrm.resx">
+      <DependentUpon>DevicePartDetailFrm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="DevicePartRelatedFrm.resx">
+      <DependentUpon>DevicePartRelatedFrm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="DevicePartFrm.resx">
+      <DependentUpon>DevicePartFrm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="DeviceSelectFrm.resx">
+      <DependentUpon>DeviceSelectFrm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="DeviceStatusFrm.resx">
+      <DependentUpon>DeviceStatusFrm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="LocationSetupFrm.resx">
+      <DependentUpon>LocationSetupFrm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="MainFrm.resx">
+      <DependentUpon>MainFrm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="MaintenanceFrm.resx">
+      <DependentUpon>MaintenanceFrm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="MaintenanceDetailFrm.resx">
+      <DependentUpon>MaintenanceDetailFrm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="PhoneBookDetailFrm.resx">
+      <DependentUpon>PhoneBookDetailFrm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="PhoneBookFrm.resx">
+      <DependentUpon>PhoneBookFrm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Properties\Resources.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <SubType>Designer</SubType>
+      <LastGenOutput>Resources.Designer.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="SparePartBalanceFrm.resx">
+      <DependentUpon>SparePartBalanceFrm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="SparePartChangedDetailFrm.resx">
+      <DependentUpon>SparePartChangedDetailFrm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="SparePartChangedFrm.resx">
+      <DependentUpon>SparePartChangedFrm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="SparePartDetailFrm.resx">
+      <DependentUpon>SparePartDetailFrm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="SparePartFrm.resx">
+      <DependentUpon>SparePartFrm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="SparePartNeededDetailFrm.resx">
+      <DependentUpon>SparePartNeededDetailFrm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="SparePartNeededFrm.resx">
+      <DependentUpon>SparePartNeededFrm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="SparePartNeededStatusFrm.resx">
+      <DependentUpon>SparePartNeededStatusFrm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="SparePartSelectFrm.resx">
+      <DependentUpon>SparePartSelectFrm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="SubDeviceFrm.resx">
+      <DependentUpon>SubDeviceFrm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ToolDetailFrm.resx">
+      <DependentUpon>ToolDetailFrm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ToolFrm.resx">
+      <DependentUpon>ToolFrm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ToolLendDetailFrm.resx">
+      <DependentUpon>ToolLendDetailFrm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ToolLendRecordFrm.resx">
+      <DependentUpon>ToolLendRecordFrm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ToolQtyChangeFrm.resx">
+      <DependentUpon>ToolQtyChangeFrm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ToolTypeFrm.resx">
+      <DependentUpon>ToolTypeFrm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UnitsSetupFrm.resx">
+      <DependentUpon>UnitsSetupFrm.cs</DependentUpon>
+    </EmbeddedResource>
+    <None Include="packages.config" />
+    <None Include="Properties\DataSources\Models.AddressModel.datasource" />
+    <None Include="Properties\DataSources\Models.ApModel.datasource" />
+    <None Include="Properties\DataSources\Models.CompanyModel.datasource" />
+    <None Include="Properties\DataSources\Models.DeviceModel.datasource" />
+    <None Include="Properties\DataSources\Models.DevicePartModel.datasource" />
+    <None Include="Properties\DataSources\Models.DeviceStatusModel.datasource" />
+    <None Include="Properties\DataSources\Models.LocationModel.datasource" />
+    <None Include="Properties\DataSources\Models.MaintenanceModel.datasource" />
+    <None Include="Properties\DataSources\Models.PhoneBookModel.datasource" />
+    <None Include="Properties\DataSources\Models.SparePartBalanceModel.datasource" />
+    <None Include="Properties\DataSources\Models.SparePartChangedModel.datasource" />
+    <None Include="Properties\DataSources\Models.SparePartModel.datasource" />
+    <None Include="Properties\DataSources\Models.SparePartNeeded.datasource" />
+    <None Include="Properties\DataSources\Models.SparePartNeededModel.datasource" />
+    <None Include="Properties\DataSources\Models.SparePartNeededStatusModel.datasource" />
+    <None Include="Properties\DataSources\Models.SubDeviceModel.datasource" />
+    <None Include="Properties\DataSources\Models.ToolLendModel.datasource" />
+    <None Include="Properties\DataSources\Models.ToolModel.datasource" />
+    <None Include="Properties\DataSources\Models.ToolQtyChangeModel.datasource" />
+    <None Include="Properties\DataSources\Models.ToolTypeModel.datasource" />
+    <None Include="Properties\DataSources\Models.UnitsModel.datasource" />
+    <None Include="Properties\Settings.settings">
+      <Generator>SettingsSingleFileGenerator</Generator>
+      <LastGenOutput>Settings.Designer.cs</LastGenOutput>
+    </None>
+    <Compile Include="Properties\Settings.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Settings.settings</DependentUpon>
+      <DesignTimeSharedInput>True</DesignTimeSharedInput>
+    </Compile>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="App.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\BLL\BLL.csproj">
+      <Project>{36bffb61-1276-42b5-861b-b49079b3d937}</Project>
+      <Name>BLL</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Libs\Libs.csproj">
+      <Project>{2bc9b130-f0bc-4f6c-ba7f-465dffd33355}</Project>
+      <Name>Libs</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Models\Models.csproj">
+      <Project>{1c9b5f5e-13ee-4b00-a7b4-be893350579a}</Project>
+      <Name>Models</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="SetupFold\" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\device.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\maintenance.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\phoneBook.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Repair.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Company.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Company1.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\sparePart.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\sparePartRelated.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\taReport.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\sepcoIogo.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\tools.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\schedule.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\CalibrationRecord.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\calibrationPlan.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="ExeFiles\bsondump.exe">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="ExeFiles\mongodump.exe">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="ExeFiles\mongoexport.exe">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="ExeFiles\mongofiles.exe">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="ExeFiles\mongoimport.exe">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="ExeFiles\mongorestore.exe">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="ExeFiles\mongostat.exe">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="ExeFiles\mongotop.exe">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+</Project>

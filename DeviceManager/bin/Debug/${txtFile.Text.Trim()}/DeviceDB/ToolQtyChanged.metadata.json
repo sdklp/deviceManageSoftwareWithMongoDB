@@ -1,0 +1,1 @@
+{"indexes":[{"v":{"$numberInt":"2"},"key":{"_id":{"$numberInt":"1"}},"name":"_id_"}],"uuid":"ddc733ef876947bf904704ccb8db6bc5","collectionName":"ToolQtyChanged","type":"collection"}

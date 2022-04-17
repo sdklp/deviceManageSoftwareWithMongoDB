@@ -1,0 +1,1 @@
+{"indexes":[{"v":{"$numberInt":"2"},"key":{"_id":{"$numberInt":"1"}},"name":"_id_"},{"v":{"$numberInt":"2"},"key":{"Did":{"$numberInt":"1"},"Pid":{"$numberInt":"1"},"SubDevice":{"$numberInt":"1"}},"name":"Did_1_Pid_1_SubDevice_1","unique":true}],"uuid":"ac63ac07079144a6a61934259e288b35","collectionName":"DevicePart","type":"collection"}

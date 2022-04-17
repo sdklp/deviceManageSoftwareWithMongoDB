@@ -1,0 +1,13 @@
+D:\DeviceManager\Models\obj\Debug\Models.csproj.CoreCompileInputs.cache
+D:\DeviceManager\Models\bin\Debug\Models.dll
+D:\DeviceManager\Models\bin\Debug\Models.pdb
+D:\DeviceManager\Models\obj\Debug\Models.dll
+D:\DeviceManager\Models\obj\Debug\Models.pdb
+D:\DeviceManager\Models\bin\Debug\MongoDB.Bson.dll
+D:\DeviceManager\Models\bin\Debug\System.Runtime.CompilerServices.Unsafe.dll
+D:\DeviceManager\Models\bin\Debug\MongoDB.Bson.xml
+D:\DeviceManager\Models\bin\Debug\System.Runtime.CompilerServices.Unsafe.xml
+D:\DeviceManager\Models\obj\Debug\Models.csproj.CopyComplete
+D:\DeviceManager\Models\obj\Debug\Models.SparePartBalanceFrm.resources
+D:\DeviceManager\Models\obj\Debug\Models.csproj.GenerateResource.cache
+D:\DeviceManager\Models\obj\Debug\Models.csproj.AssemblyReference.cache

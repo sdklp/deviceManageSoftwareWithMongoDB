@@ -1,0 +1,93 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="15.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{1C9B5F5E-13EE-4B00-A7B4-BE893350579A}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>Models</RootNamespace>
+    <AssemblyName>Models</AssemblyName>
+    <TargetFrameworkVersion>v4.7.2</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <Deterministic>true</Deterministic>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="MongoDB.Bson, Version=2.14.1.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\DeviceManager\packages\MongoDB.Bson.2.14.1\lib\net472\MongoDB.Bson.dll</HintPath>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Runtime.CompilerServices.Unsafe, Version=5.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
+      <HintPath>..\DeviceManager\packages\System.Runtime.CompilerServices.Unsafe.5.0.0\lib\net45\System.Runtime.CompilerServices.Unsafe.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Windows.Forms" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Net.Http" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="AddressModel.cs" />
+    <Compile Include="ApModel.cs" />
+    <Compile Include="CompanyModel.cs" />
+    <Compile Include="DeviceModel.cs" />
+    <Compile Include="DevicePartModel.cs" />
+    <Compile Include="DeviceStatusModel.cs" />
+    <Compile Include="FactoryModel.cs" />
+    <Compile Include="IModel.cs" />
+    <Compile Include="LocationModel.cs" />
+    <Compile Include="MaintenanceModel.cs" />
+    <Compile Include="PartChangedModel.cs" />
+    <Compile Include="PartNeededModel.cs" />
+    <Compile Include="PhoneBookModel.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="SparePartBalanceFrm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="SparePartBalanceFrm.Designer.cs">
+      <DependentUpon>SparePartBalanceFrm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="SparePartBalanceModel.cs" />
+    <Compile Include="SparePartChangedModel.cs" />
+    <Compile Include="SparePartModel.cs" />
+    <Compile Include="SparePartNeededModel.cs" />
+    <Compile Include="SparePartNeededStatusModel.cs" />
+    <Compile Include="SubDeviceModel.cs" />
+    <Compile Include="ToolLendModel.cs" />
+    <Compile Include="ToolModel.cs" />
+    <Compile Include="ToolQtyChangeModel.cs" />
+    <Compile Include="ToolTypeModel.cs" />
+    <Compile Include="UnitsModel.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="packages.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="SparePartBalanceFrm.resx">
+      <DependentUpon>SparePartBalanceFrm.cs</DependentUpon>
+    </EmbeddedResource>
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+</Project>
